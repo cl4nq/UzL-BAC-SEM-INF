@@ -5,5 +5,6 @@
 *.pdf
 *.gz
 *.bbl
+*.png
 test.tex
 Test
