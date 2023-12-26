@@ -102,7 +102,7 @@ to traditional caching strategies in terms of data retrieval and network energy 
 % the caching probability of each node.
 
 In the Internet of Things (IoT), wireless devices interact with their environment and the Internet to support context-aware services. 
-As IoT data is smaller and more transient compared to internet content, they require new protocols. Recently, Information-Centric Networking (ICN) is explored 
+As IoT data is smaller and more transient compared to internet content, they require new protocols. Recently, Information-Centric Networking (ICN) has been explored 
 for IoT, offering benefits like simplified data retrieval, mobility support, caching, and content-based security \cite{b2, b3, b4}. To address the lack of 
 caching strategies for wireless IoT, we introduce pCASTING, a \textit{probabilistic CAching STrategy for the INternet of thinGs} considering data freshness, energy levels, 
 and storage capabilities for each network node.
@@ -139,12 +139,12 @@ IoT contents with specific freshness. The remaining nodes can cache and forward 
 with a matching PIT, the caching decision follows the pCASTING strategy, considering three dynamic attributes related to the device and 
 content to calculate the caching probability.
 
-The device related attributes are \textit{energy level} ($EN$) and \textit{cache occupancy} ($OC$). These values can easily be monitored by the
-IoT devices. As a content attribute we consider the Data \textit{residual freshness} ($FR$). According to NDN, any producer may include in a Data packet a value indicating the freshness $f$ in seconds,
+The device-related attributes are \textit{energy level} ($EN$) and \textit{cache occupancy} ($OC$). These values can easily be monitored by the
+IoT devices. As a content attribute, we consider the Data \textit{residual freshness} ($FR$). According to NDN, any producer may include in a Data packet a value indicating the freshness $f$ in seconds,
 and a timestamp $t_s$ identifying the instant when the information is produced.
 
-We assume that the caching probability is directly (inversely) proportional to each of these parameters. So that for each of the mentioned paramters can be
-normalized as $0 \leq EN \leq 1$, $0 \leq OC \leq 1$ where the values $0$ and $1$ mean that the cache, or the battery are empty or full, respectively.
+We assume that the caching probability is directly (inversely) proportional to each of these parameters. So that for each of the mentioned parameters can be
+normalized as $0 \leq EN \leq 1$, $0 \leq OC \leq 1$ where the values $0$ and $1$ mean that the cache or the battery is empty or full, respectively.
 The residual freshness can be normalized as $ FR = 1 - \frac{currentTime - t_s}{f}$.
 Packets with a negative freshness parameter are considered expired and are not cached at all.
 
@@ -155,8 +155,8 @@ Packets with a negative freshness parameter are considered expired and are not c
 % As a content attribute, we consider the Data residual freshness. According to NDN, any producer may include in a Data packet a value indicating the freshness $f$ in seconds,
 % and a timestamp $t_s$ identifying the instant when the information is produced. We define a normalized freshness parameter $FR$ as:
 
-In order to define a caching probability of a Data packet, we consider a \textit{Caching Utility Function} $F_u$ that takes into account
-all of the above normalized parameters. The function can be written as follows:
+To define the caching probability of a Data packet, we consider a \textit{Caching Utility Function} $F_u$ that takes into account
+all of the normalized parameters above. The function can be written as follows:
 $$F_u = \sum_{i = 1}^{N_p} w_i g(x_i)$$
 
 where $N_p$ is the number of parameters and the weights $w_i$ assume a value such that $0 \leq w_i \leq 1$ and $\sum_{i = 1}^{N_p} w_i = 1$.
@@ -215,11 +215,11 @@ pCASTING solution were implemented in the ndnSIM tool \cite{b10}, the reference 
 in ns-3 \cite{b18}. Additional information concerning the simulation settings is listed in Table 1.
 
 In the initial analysis, we aim to assess the energy efficiency of pCASTING while ensuring good performance in terms of retrieval delay and 
-collected Data. Consumer nodes start with high initial energy, while forwarding nodes start with low initial energy. The simulation concludes 
+collected Data. Consumer nodes start with high initial energy while forwarding nodes start with low initial energy. The simulation concludes 
 when all forwarding nodes deplete their energy.
 
-As energy performance metric, we consider the \textit{cumulative distribution function} (CDF) \textit{of the discharge time of the forwardning nodesodes}.
-As indicators if the dissemination performance, we consider three values as listed in Table 2.
+As an energy performance metric, we consider the \textit{cumulative distribution function} (CDF) \textit{of the discharge time of the forwarding nodes}.
+As indicators of the dissemination performance, we consider three values as listed in Table 2.
 
 We evaluate pCASTING by comparing it to three reference schemes:
 % $(i)$ 
@@ -232,7 +232,7 @@ a probabilistic scheme denoted as $P(0.5)$,
 and a \textit{no caching} scheme.
 % , where nodes 
 % solely forward incoming packets without utilizing their Content Store (CS). For each caching scheme, the replacement policy employed is LRU.
-Results are calculated over ten independent runs and can be examined in Fig. 2 or Table 2, repectively.
+Results are calculated over ten independent runs and can be examined in Fig. 2 or Table 2, respectively.
 
 
 \begin{table}[htbp]
@@ -270,7 +270,7 @@ Results are calculated over ten independent runs and can be examined in Fig. 2 o
 
 In the second experiment, fully charged nodes are monitored for energy consumption over ten minutes. Assessing the caching 
 strategy's efficiency from the network perspective involves considering the \textit{number of Interests and Data packets} transmitted. 
-From the consumer perspective, efficiency is evaluated by examining \textit{consumer energy cost}, calculated as the average ratio of 
+From the consumer perspective, efficiency is evaluated by examining \textit{consumer energy costs}, calculated as the average ratio of 
 energy spent to correctly received bits.
 
 We compare pCASTING against the \textit{no caching} and $P(0.5)$ scheme. Results are averaged over ten independent runs
