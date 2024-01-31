@@ -5,5 +5,11 @@
 *.pdf
 *.gz
 *.bbl
+*sty
 test.tex
 Test
+Poster/README.md
+Poster/*.cls
+Poster/*.bib
+Poster/verbatims.tex
+!Poster/poster.pdf

@@ -10,4 +10,4 @@ _Short Paper_:
 short-paper_final.tex / short-paper_final.pdf
 
 *Poster*:
-TBA
+poster.tex / poster.pdf
